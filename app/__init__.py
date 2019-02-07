@@ -1,21 +1,33 @@
 from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
-from . import config_options
+from flask_bootstrap import Bootstrap
 
 
-db = SQLAlchemy()
+
+# from .config import DevcConfig
+
+
+# db = SQLAlchemy()
 
 
 #intitalize application
 
-def create_app(config_name):
+flask_app = Flask(__name__)
+bootstrap = Bootstrap(flask_app)
 
-    app = Flask(__name__, instance_relative_config=True)
-    app.config.from_object(config_options[config_name])
-    app.config.from_object('config.py')
-    db.init_app(app)
+ 
+
+
     
-    return app
+# app_dash = Dash(__name__)
+
+# app.config.from_object(DevConfig)
+
+# app.config.from_pyfile('config.py')
+  
+
+
+from app import views
+
 
 
 
