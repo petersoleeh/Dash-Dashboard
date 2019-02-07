@@ -1,8 +1,14 @@
-from flask import render_template
-from app import app
+from flask import render_template, redirect
+from app import flask_app
+import flask
+import dashapp
+
+
+
+
 
 #index page
-@app.route('/')
+@flask_app.route('/')
 def index():
     '''
     index page with the landing page and data
@@ -10,3 +16,6 @@ def index():
     title = 'Dash Template Test'
     
     return render_template('index.html',title=title)
+
+
+
